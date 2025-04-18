@@ -66,7 +66,7 @@ const projects = [
 export default function Portfolio() {
   const [openProjectIndex, setOpenProjectIndex] = useState(null);
 
-  const toggleDetails = (index) => {
+  const toggleDetails = (index: number) => {
     setOpenProjectIndex(openProjectIndex === index ? null : index);
   };
 
