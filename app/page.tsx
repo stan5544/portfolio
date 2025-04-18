@@ -3,64 +3,158 @@
 import React, { useState } from "react";
 import Image from "next/image";
 
-const projects = [
+type Experiences = {
+  title: string;
+  company: string;
+  logo: string;
+  description: string[];
+  projects: { title: string; details: string[] }[];
+  skills: string[];
+  stack: string[];
+};
+
+const projects: Experiences[] = [
   {
-    title: "Business Analyst – Groupe IT (2024–...)",
+    title: "Business Analyst (Juillet 2024 – Aujourd'hui)",
     company: "Allianz",
     logo: "/logos/allianz.png",
-    description:
-      "Analyse des besoins métiers, rédaction des specs, gestion des tests, indicateurs de suivi produit.",
-    tasks: [
-      "Recueil des besoins auprès des parties prenantes",
-      "Rédaction des spécifications fonctionnelles",
-      "Mise en place de tests de non-régression",
-      "Suivi des indicateurs qualité et couverture fonctionnelle"
+    description: [
+      "<b>Entreprise:</b> Allianz est un des leader dans le secteur de l'assurance.",
+      "<b>Organisation des équipes:</b> SAFe.",
+      "<b>Rôles:</b> pour chaque changement concernant un contrat d'assurance, le client doit être notifié par un canal (e-mail, courrier, fax...) d'un document l'informant de la modification. En tant que Business analyst, mon rôle consiste à identifier les règles à implémenter concernant la génération et l'envoi du document, et cela en étroite collaboration avec le métier et les équipes dev. Parallèlement à cela, je travaille également sur l'interface permettant au métier de consulter l'ensemble des notifications.",
     ],
-    skills: ["Spécifications", "Tests fonctionnels", "Analyse métier", "KPIs"]
+    projects: [
+      {
+        title: "Refonte de la solution de génération et d'envoi de notifications aux clients.",
+        details: [
+          "Analyse des besoins métiers.",
+          "Rédaction des spécifications fonctionnelles et techniques avec l'équipe dev.",
+          "Suivi des développements et des tests.",
+          "Création et priorisation du backlog sur le court et moyen terme.",
+          "Mise en place de TNR automatisés afin de détecter rapidement toute regression de configuration ou de déploiement.",
+          "Suivi des deliverys.",
+          "Mise en place de monitoring sur l'environnement de production.",
+          "Gestion des incidents.",
+        ],
+      },
+      {
+        title: "Développement d'une webapp pour le métier.",
+        details: [
+          "Mise en place d'ateliers de co-conception avec les utilisateurs.",
+          "Rédaction des spécifications fonctionnelles et techniques avec l'équipe dev.",
+          "Suivi des développements et des tests.",
+          "Création et priorisation du backlog.",
+        ],
+      },
+    ],
+    skills: ["Spécifications", "Tests fonctionnels", "Webapp", "API", "Micoservices", "UX/UI", "Analyse métier", "Roadmap produit", "Gestion des incidents", "SAFe"],
+    stack: ["AWS", "Jira", "Confluence", "Postman", "Swagger"],
   },
   {
-    title: "Product Owner – B2B SaaS (2023-2024)",
+    title: "Product Owner (Janvier 2023 – Juin 2024)",
     company: "DXOMARK",
     logo: "/logos/dxomark.png",
-    description:
-      "Définition de la roadmap, mise en place de KPIs, gestion des US via Scrum, validation fonctionnelle, gestion client, mentoring de 2 ingénieurs.",
-    tasks: [
-      "Création et priorisation du backlog produit",
-      "Animation des cérémonies Scrum avec l'équipe dev",
-      "Définition des indicateurs de performance (KPIs)",
-      "Validation fonctionnelle des nouvelles fonctionnalités",
-      "Conduite d’ateliers de design thinking avec les utilisateurs"
+    description: [
+      "<b>Entreprise:</b> DXOMARK propose des services auprès des fabricants de smartphones pour les accompagner dans l'amélioration de la qualité de leurs produits. Le service le plus connu est un service de conseil sur la qualité des photos et vidéos qui est basé sur un protocole de tests. En parallèle, DXOMARK a créé un nouveau produit appelé <a href='https://www.dxomark.com/insights' target='_blank' rel='noopener noreferrer' style='color: #10B981; text-decoration: underline;'>Insights</a>, qui vise à fournir des informations sur les préférences utilisateurs, permettant aux fabricants de smartphones de mieux comprendre les attentes de leurs clients.",
+      "<b>Organisation des équipes:</b> Multi scrum.",
+      "<b>Rôles:</b> responsable de la communication auprès d'un portefeuille clients afin de s'assurer de leur satisfaction sur les projets en cours, du recueil de leurs besoins et de leurs roadmaps produits internes.",
     ],
-    skills: ["Scrum", "Backlog Management", "KPIs", "Validation fonctionnelle", "Design Thinking"]
+    projects: [
+      {
+        title: "Insights - Apporter aux fabricants de smartphones des informations sur les préférences utilisateurs.",
+        details: [
+          "Phase de discovery pour identfier les challenges rencontrés par les fabricants de smartphones.",
+          "Création et priorisation du backlog.",
+          "Création d'une roadmap produit.",
+          "Rédaction des spécifications fonctionnelles et techniques.",
+          "Gestion de projet afin de respecter les délais et le budget.",
+          "Présentation régulières des résultats aux clients.",
+          "Présentation en interne de l'avancement du projet avec mise en avant des KPI clés (satisfaction et retours clients, coût, délai).",
+        ],
+      },
+      {
+        title: "Supervision de l'avancement des projets pour les clients.",
+        details: [
+          "Gestion de la relation client.",
+          "Encadrement des équipes de conseil.",
+        ],
+      },
+      {
+        title: "Amélioration des outils métier pour le service de conseil.",
+        details: [
+          "Mise en place d'atelier pour le recueil des besoins métiers.",
+          "Rédaction des spécifications fonctionnelles et techniques.",
+        ],
+      },
+      {
+        title: "Manager de deux ingénieurs.",
+        details: [
+          "Mise en place de plan de montée en compétences.",
+          "Mentoring.",
+        ],
+      },
+    ],
+    skills: ["Scrum", "Backlog Management", "Management", "Roadmap produit", "Qualité d'image", "Validation fonctionnelle", "Design Thinking", "Relation client", "Présentation", "Gestion de projet"],
+    stack: ["Jira", "Confluence", "Miro", "PowerPoint"],
   },
   {
-    title: "Scrum Master – Scale-up (2021–2023)",
+    title: "Scrum master (Septembre 2021 – Décembre 2022)",
     company: "DXOMARK",
     logo: "/logos/dxomark.png",
-    description:
-      "Animation des rituels agiles, coaching d’équipe, collaboration étroite avec les POs.",
-    tasks: [
-      "Animation quotidienne des cérémonies Scrum",
-      "Médiation entre devs et product owner",
-      "Accompagnement de l’équipe vers l’auto-organisation",
-      "Coaching sur les bonnes pratiques agiles"
+    description: [
+      "<b>Entreprise:</b> DXOMARK propose des services auprès des fabricants de smartphones pour les accompagner dans l'amélioration de la qualité de leurs produits. Le service le plus connu est un service de conseil sur la qualité des photos et vidéos qui est basé sur un protocole de tests. En parallèle, DXOMARK a créé un nouveau produit appelé <a href='https://www.dxomark.com/insights' target='_blank' rel='noopener noreferrer' style='color: #10B981; text-decoration: underline;'>Insights</a>, qui vise à fournir des informations sur les préférences utilisateurs, permettant aux fabricants de smartphones de mieux comprendre les attentes de leurs clients.",
+      "<b>Organisation des équipes:</b> Multi scrum.",
+      "<b>Rôles:</b> en tant que Scrum Master, je suis responsable de la mise en place et du suivi des cérémonies Scrum, de l'accompagnement des équipes dans leur montée en compétence sur les pratiques agiles et de la gestion des obstacles rencontrés par les équipes. En parallèle, je contribue toujours au développement des outils métier.",
     ],
-    skills: ["Scrum", "Coaching", "Facilitation", "Agilité"]
+    projects: [
+      {
+        title: "Scrum Master",
+        details: [
+          "Accompagnement des équipes dans leur montée en compétence sur les pratiques agiles.",
+          "Mise en place et suivi des cérémonies Scrum.",
+          "Gestion des obstacles rencontrés par les équipes.",
+          "Suivi des KPI clés du fonctionnement de l'équipe tels que la vélocité.",
+        ],
+      },
+      {
+        title: "Développement des outils métier pour le service de conseil.",
+        details: [
+          "En python, développement de la partie backend de la webapp permettant au métier d'effectuer l'analyse de la qualité des photos et vidéos.",
+          "En python, création de rapports techniques pour le client.",
+        ],
+      },
+    ],
+    skills: ["Scrum", "Développer backend", "Qualité d'image"],
+    stack: ["Jira", "Confluence", "Python"],
   },
   {
-    title: "Développeur Backend – Conseil (2019–2021)",
+    title: "Ingénieur conseil et développeur backend (Septembre 2019 – Aout 2021)",
     company: "DXOMARK",
     logo: "/logos/dxomark.png",
-    description:
-      "Développement Python, accompagnement tech de projets photo/vidéo sur smartphone.",
-    tasks: [
-      "Développement d’APIs REST en Python",
-      "Support technique aux équipes hardware",
-      "Conception de modules de traitement d’image",
-      "Documentation technique et tests unitaires"
+    description: [
+      "<b>Entreprise:</b> DXOMARK propose des services auprès des fabricants de smartphones pour les accompagner dans l'amélioration de la qualité de leurs produits. Le service le plus connu est un service de conseil sur la qualité des photos et vidéos qui est basé sur un protocole de tests. En parallèle, DXOMARK a créé un nouveau produit appelé <a href='https://www.dxomark.com/insights' target='_blank' rel='noopener noreferrer' style='color: #10B981; text-decoration: underline;'>Insights</a>, qui vise à fournir des informations sur les préférences utilisateurs, permettant aux fabricants de smartphones de mieux comprendre les attentes de leurs clients.",
+      "<b>Organisation des équipes:</b> Multi scrum.",
+      "<b>Rôles:</b> Je disposais de tâches principales: être l'interface client pour le service de conseil ainsi que développer la partie backend de la webapp permettant au métier d'effectuer l'analyse de la qualité des photos",
     ],
-    skills: ["Python", "API", "Support technique", "Tests", "Documentation"]
-  }
+    projects: [
+      {
+        title: "Ingénieur conseil en qualité d'image.",
+        details: [
+          "Relation client au jour le jour avec les équipes de développement des fabricants de smartphones.",
+          "Analyse des la qualité des produits.",
+        ],
+      },
+      {
+        title: "Développement des outils métier pour le service de conseil.",
+        details: [
+          "En python, développement de la partie backend de la webapp permettant au métier d'effectuer l'analyse de la qualité des photos et vidéos.",
+          "En python, création de rapports techniques pour le client.",
+        ],
+      },
+    ],
+    skills: ["Scrum", "Développer backend", "Qualité d'image", "Relation client"],
+    stack: ["Jira", "Confluence", "Python"],
+  },
 ];
 
 export default function Portfolio() {
@@ -72,70 +166,137 @@ export default function Portfolio() {
 
   return (
     <main className="font-sans text-gray-900 bg-[#f5f5f5]">
-      {/* Hero Section */}
-      <section className="text-center py-20 bg-[#0F172A] text-white">
-        <h1 className="text-4xl font-bold">Stanislas Brochard-Garnier</h1>
-        <p className="text-xl text-[#A7F3D0] mt-4">Product Owner & Agile Leader</p>
-        <p className="mt-6 max-w-2xl mx-auto text-lg">
-          Je conçois des solutions digitales centrées utilisateur, en alignant vision
-          produit et exécution agile. Passionné par la tech et l’humain, je transforme
-          les besoins métiers en produits concrets, scalables et impactants.
-        </p>
-        <div className="mt-8">
-          <a href="#projects" className="bg-[#10B981] hover:bg-[#059669] text-white px-6 py-2 rounded-full">
-            Voir mes projets
-          </a>
+      {/* Hero */}
+      <section className="py-20 bg-[#0F172A] text-white relative">
+        {/* Nom et titre en haut */}
+        <div className="text-center mb-10">
+          <h1 className="text-5xl font-bold">Stanislas Brochard-Garnier</h1>
+          <p className="text-2xl text-[#A7F3D0] mt-4">Product Owner</p>
+        </div>
+
+        {/* Contenu principal avec image à gauche et texte à droite */}
+        <div className="flex items-center justify-center gap-12 max-w-5xl mx-auto">
+          {/* Image à gauche */}
+          <div className="w-48 h-48">
+            <Image
+              src="/profile_picture.jpg" // Remplacez par le chemin de votre photo
+              alt="Stanislas Brochard-Garnier"
+              width={400}
+              height={400}
+              className="rounded-full border-4 border-white shadow-lg"
+            />
+          </div>
+
+          {/* Texte à droite */}
+          <div className="text-lg max-w-2xl">
+            <p>
+              Je suis passionné par la technologie et l'amélioration produit. A travers mes expériences, j'ai pu découvrir différentes cultures d'entreprise : une scale-up dans le secteur de la tech ainsi qu'une entreprise de renommée internationale. Toutes les deux mettant l'agilité au cœur de leur fonctionnement.
+            </p>
+            <br />
+            <p>
+              Je suis autonome et toujours curieux d'apprendre, que cela soit sur les technologies ou sur les méthodes de développement produit.
+            </p>
+            <br />
+            <p>
+              Je suis à la recherche d'une nouvelle aventure professionnelle dans le secteur de la tech pour un poste de Product Owner/Manager, de préférence en Ile-de-France.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Timeline Section */}
+      {/* Parcours */}
       <section id="projects" className="py-16 px-8">
         <h2 className="text-3xl font-bold text-center mb-10 text-[#065F46]">Mon parcours professionnel</h2>
-        <div className="border-l-2 border-[#10B981] pl-6 space-y-10 max-w-3xl mx-auto">
-          {projects.map((project, index) => (
+        <div className="pl-6 space-y-10 max-w-3xl mx-auto">
+          {projects.map((experience, index) => (
             <div key={index} className="relative">
-              <div className="absolute -left-4 top-2 w-4 h-4 bg-[#10B981] rounded-full"></div>
-              <div className="flex items-center gap-4 mb-2">
-                <div className="w-10 h-10 relative">
+              <div className="relative flex items-center gap-6 mb-4">
+                {/* Conteneur du logo */}
+                <div className="relative w-20 h-20">
                   <Image
-                    src={project.logo}
-                    alt={project.company}
+                    src={experience.logo}
+                    alt={experience.company}
                     layout="fill"
                     objectFit="contain"
+                    className="rounded-lg"
                   />
                 </div>
-                <h3 className="text-xl font-semibold text-[#0F172A]">
-                  {project.title}
-                </h3>
+                {/* Titre de l'expérience */}
+                <h3 className="text-xl font-semibold text-[#0F172A]">{experience.title}</h3>
               </div>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.skills.map((skill, i) => (
-                  <span
-                    key={i}
-                    className="bg-[#D1FAE5] text-[#065F46] px-3 py-1 rounded-full text-xs"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
+
               <div className="text-center">
                 <button
                   onClick={() => toggleDetails(index)}
                   className="text-sm text-white bg-[#10B981] hover:bg-[#059669] px-4 py-1 rounded-full"
                 >
-                  {openProjectIndex === index ? "Masquer" : "Voir plus"}
+                  {openProjectIndex === index ? "Masquer" : "Voir les projets"}
                 </button>
               </div>
+
               {openProjectIndex === index && (
                 <div className="bg-white p-4 mt-4 rounded-lg shadow">
-                  <p className="mb-2 text-gray-700">{project.description}</p>
+                  {/* Contexte */}
+                  <h4 className="text-lg font-semibold text-[#065F46] mt-4">Contexte</h4>
                   <ul className="list-disc pl-6 mb-4 text-sm text-gray-600">
-                    {project.tasks.map((task, i) => (
-                      <li key={i}>{task}</li>
+                    {experience.description.map((desc, i) => (
+                      <li
+                        key={i}
+                        className="text-gray-500"
+                        dangerouslySetInnerHTML={{ __html: desc }}
+                      ></li>
                     ))}
                   </ul>
+
+                  {/* Liste des projets */}
+                  <h4 className="text-lg font-semibold text-[#065F46] mt-4">Projets</h4>
+                  <ul className="list-disc pl-6 mb-4 text-sm text-gray-600">
+                    {experience.projects.map((project, i) => (
+                      <li key={i} className="mb-4">
+                        <strong>{project.title}</strong>
+                        <ul className="list-disc pl-6 mt-2">
+                          {project.details.map((detail, j) => (
+                            <li
+                              key={j}
+                              className="text-gray-500"
+                              dangerouslySetInnerHTML={{ __html: detail }}
+                            ></li>
+                          ))}
+                        </ul>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Section Compétences */}
+                  <h4 className="text-lg font-semibold text-[#065F46] mt-4">Compétences</h4>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {experience.skills.map((skill, i) => (
+                      <span key={i} className="bg-[#D1FAE5] text-[#065F46] px-3 py-1 rounded-full text-xs">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Section Stack technique */}
+                  <h4 className="text-lg font-semibold text-[#065F46] mt-4">Stack technique</h4>
+                  <div className="flex flex-wrap gap-3">
+                    {experience.stack.map((tech, i) => (
+                      <div key={i} className="flex items-center gap-2 bg-[#ECFDF5] text-[#047857] px-4 py-2 rounded-full text-sm">
+                        <Image
+                          src={`/icons/${tech.toLowerCase()}.png`}
+                          alt={tech}
+                          width={24}
+                          height={24}
+                        />
+                        <span>{tech}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               )}
+
+              {/* Ligne horizontale */}
+              {index < projects.length - 1 && <hr className="my-10 border-t border-gray-300" />}
             </div>
           ))}
         </div>
@@ -145,16 +306,21 @@ export default function Portfolio() {
       <section className="py-16 bg-gray-100 px-8">
         <h2 className="text-3xl font-bold text-center mb-6 text-[#065F46]">Compétences clés</h2>
         <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
-          {["Product Discovery", "Scrum", "Design Thinking", "Backlog Management", "Tests fonctionnels", "Python", "SQL", "AWS", "Jira", "Postman", "Figma", "Leadership", "Mentoring"].map(
-            (skill, i) => (
-              <span
-                key={i}
-                className="bg-white text-[#065F46] px-4 py-2 rounded-full shadow-sm border border-[#10B981]"
-              >
-                {skill}
-              </span>
-            )
-          )}
+          {[
+            "Product Discovery", "Scrum", "Design Thinking", "Backlog Management",
+            "Tests fonctionnels", "Python", "API (Swagger, Postman)", "AWS", "Jira",
+            "Relation client", "Leadership", "Mentoring", "UX/UI", "Gestion de projet",
+            "Agile", "SAFe", "Développement Webapp", "Microservices", "Qualité d'image",
+            "Roadmap produit", "Gestion des incidents", "Analyse métier",
+            "Développement backend",
+          ].map((skill, i) => (
+            <span
+              key={i}
+              className="bg-white text-[#065F46] px-4 py-2 rounded-full shadow-sm border border-[#10B981]"
+            >
+              {skill}
+            </span>
+          ))}
         </div>
       </section>
 
@@ -162,7 +328,7 @@ export default function Portfolio() {
       <section className="py-16 text-center bg-white">
         <h2 className="text-2xl font-bold text-[#065F46]">Restons en contact</h2>
         <p className="mt-2 text-gray-700">
-          Tu veux parler produit, mission freelance ou juste échanger ?
+          N'hésitez pas à me contacter pour discuter de nouvelles opportunités ou collaborations.
         </p>
         <a
           href="mailto:stanislasbrochardgarnier@gmail.com"
