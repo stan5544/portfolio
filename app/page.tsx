@@ -108,30 +108,32 @@ export default function Portfolio() {
                   {project.title}
                 </h3>
               </div>
-              <button
-                onClick={() => toggleDetails(index)}
-                className="text-sm text-[#10B981] underline mb-2"
-              >
-                {openProjectIndex === index ? "Masquer" : "Voir plus"}
-              </button>
+              <div className="flex flex-wrap gap-2 mb-4">
+                {project.skills.map((skill, i) => (
+                  <span
+                    key={i}
+                    className="bg-[#D1FAE5] text-[#065F46] px-3 py-1 rounded-full text-xs"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+              <div className="text-center">
+                <button
+                  onClick={() => toggleDetails(index)}
+                  className="text-sm text-white bg-[#10B981] hover:bg-[#059669] px-4 py-1 rounded-full"
+                >
+                  {openProjectIndex === index ? "Masquer" : "Voir plus"}
+                </button>
+              </div>
               {openProjectIndex === index && (
-                <div className="bg-white p-4 mt-2 rounded-lg shadow">
+                <div className="bg-white p-4 mt-4 rounded-lg shadow">
                   <p className="mb-2 text-gray-700">{project.description}</p>
                   <ul className="list-disc pl-6 mb-4 text-sm text-gray-600">
                     {project.tasks.map((task, i) => (
                       <li key={i}>{task}</li>
                     ))}
                   </ul>
-                  <div className="flex flex-wrap gap-2">
-                    {project.skills.map((skill, i) => (
-                      <span
-                        key={i}
-                        className="bg-[#D1FAE5] text-[#065F46] px-3 py-1 rounded-full text-xs"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
                 </div>
               )}
             </div>
