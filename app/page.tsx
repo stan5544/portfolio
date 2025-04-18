@@ -190,7 +190,7 @@ export default function Portfolio() {
           {/* Texte à droite */}
           <div className="text-lg max-w-2xl">
             <p>
-              Je suis passionné par la technologie et l'amélioration produit. A travers mes expériences, j'ai pu découvrir différentes cultures d'entreprise : une scale-up dans le secteur de la tech ainsi qu'une entreprise de renommée internationale. Toutes les deux mettant l'agilité au cœur de leur fonctionnement.
+              Ingénieur de formation à l'UTT et CentraleSupélec, je suis passionné par la technologie et l'amélioration produit. A travers mes expériences, j'ai pu découvrir différentes cultures d'entreprise : une scale-up dans le secteur de la tech ainsi qu'une entreprise de renommée internationale. Toutes les deux mettant l'agilité au cœur de leur fonctionnement.
             </p>
             <br />
             <p>
@@ -208,6 +208,7 @@ export default function Portfolio() {
       <section id="projects" className="py-16 px-8">
         <h2 className="text-3xl font-bold text-center mb-10 text-[#065F46]">Mon parcours professionnel</h2>
         <div className="pl-6 space-y-10 max-w-3xl mx-auto">
+          {/* Expériences professionnelles */}
           {projects.map((experience, index) => (
             <div key={index} className="relative">
               <div className="relative flex items-center gap-6 mb-4">
@@ -299,6 +300,60 @@ export default function Portfolio() {
               {index < projects.length - 1 && <hr className="my-10 border-t border-gray-300" />}
             </div>
           ))}
+
+          {/* Stages */}
+          <div className="space-y-10">
+            {/* Stage 1 */}
+            <div className="flex items-center gap-6">
+              <div className="relative w-20 h-20">
+                <Image
+                  src="/logos/sodern.png" // Remplacez par le chemin du logo de l'entreprise
+                  alt="Sodern"
+                  layout="fill"
+                  objectFit="contain"
+                  className="rounded-lg"
+                />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-[#0F172A]">Stage - Développement de solution de traitement d'image pour viseurs d'étoile</h3>
+                <p className="text-sm text-gray-600">Sodern (Février 2019 - Juillet 2019)</p>
+              </div>
+            </div>
+
+            {/* Stage 2 */}
+            <div className="flex items-center gap-6">
+              <div className="relative w-20 h-20">
+                <Image
+                  src="/logos/thales.png" // Remplacez par le chemin du logo de l'entreprise
+                  alt="Thales"
+                  layout="fill"
+                  objectFit="contain"
+                  className="rounded-lg"
+                />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-[#0F172A]">Stage - Laser femtoseconde</h3>
+                <p className="text-sm text-gray-600">Thales- Janvier 2018 à Juin 2018</p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-6">
+              <div className="relative w-20 h-20">
+                <Image
+                  src="/logos/cnrs.png" // Remplacez par le chemin du logo de l'entreprise
+                  alt="CNRS"
+                  layout="fill"
+                  objectFit="contain"
+                  className="rounded-lg"
+                />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-[#0F172A]">Stage - Matériaux luminescants</h3>
+                <p className="text-sm text-gray-600">CNRS- Janvier 2017 à Juin 2017</p>
+              </div>
+            </div>
+
+          </div>
         </div>
       </section>
 
@@ -321,6 +376,42 @@ export default function Portfolio() {
               {skill}
             </span>
           ))}
+        </div>
+      </section>
+
+      {/* Formation */}
+      <section className="py-16 px-8 bg-gray-50">
+        <h2 className="text-3xl font-bold text-center mb-10 text-[#065F46]">Ma formation</h2>
+        <div className="flex flex-wrap justify-center gap-12 max-w-4xl mx-auto">
+          {/* UTT */}
+          <div className="flex items-center gap-4 bg-white p-4 rounded-lg shadow-md w-full md:w-1/2">
+            <Image
+              src="/logos/utt.png" // Remplacez par le chemin du logo UTT
+              alt="Université de Technologie de Troyes"
+              width={64}
+              height={64}
+              className="rounded-md"
+            />
+            <div>
+              <h3 className="text-lg font-semibold text-[#0F172A]">Université de Technologie de Troyes</h3>
+              <p className="text-sm text-gray-600">Ingénieur Matériaux</p>
+            </div>
+          </div>
+
+          {/* CentraleSupélec */}
+          <div className="flex items-center gap-4 bg-white p-4 rounded-lg shadow-md w-full md:w-1/2">
+            <Image
+              src="/logos/centralesupelec.png" // Remplacez par le chemin du logo CentraleSupélec
+              alt="CentraleSupélec"
+              width={64}
+              height={64}
+              className="rounded-md"
+            />
+            <div>
+              <h3 className="text-lg font-semibold text-[#0F172A]">CentraleSupélec</h3>
+              <p className="text-sm text-gray-600">Master en Optique</p>
+            </div>
+          </div>
         </div>
       </section>
 
