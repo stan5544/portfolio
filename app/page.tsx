@@ -1,22 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 
 const projects = [
-  {
-    title: "Product Owner – B2B SaaS (2023-2024)",
-    company: "Allianz",
-    logo: "/logos/allianz.png",
-    description:
-      "Définition de la roadmap, mise en place de KPIs, gestion des US via Scrum, validation fonctionnelle, gestion client, mentoring de 2 ingénieurs.",
-    tasks: [
-      "Création et priorisation du backlog produit",
-      "Animation des cérémonies Scrum avec l'équipe dev",
-      "Définition des indicateurs de performance (KPIs)",
-      "Validation fonctionnelle des nouvelles fonctionnalités",
-      "Conduite d’ateliers de design thinking avec les utilisateurs"
-    ],
-    skills: ["Scrum", "Backlog Management", "KPIs", "Validation fonctionnelle", "Design Thinking"]
-  },
   {
     title: "Business Analyst – Groupe IT (2024–...)",
     company: "Allianz",
@@ -30,6 +15,21 @@ const projects = [
       "Suivi des indicateurs qualité et couverture fonctionnelle"
     ],
     skills: ["Spécifications", "Tests fonctionnels", "Analyse métier", "KPIs"]
+  },
+  {
+    title: "Product Owner – B2B SaaS (2023-2024)",
+    company: "DXOMARK",
+    logo: "/logos/dxomark.png",
+    description:
+      "Définition de la roadmap, mise en place de KPIs, gestion des US via Scrum, validation fonctionnelle, gestion client, mentoring de 2 ingénieurs.",
+    tasks: [
+      "Création et priorisation du backlog produit",
+      "Animation des cérémonies Scrum avec l'équipe dev",
+      "Définition des indicateurs de performance (KPIs)",
+      "Validation fonctionnelle des nouvelles fonctionnalités",
+      "Conduite d’ateliers de design thinking avec les utilisateurs"
+    ],
+    skills: ["Scrum", "Backlog Management", "KPIs", "Validation fonctionnelle", "Design Thinking"]
   },
   {
     title: "Scrum Master – Scale-up (2021–2023)",
@@ -62,6 +62,12 @@ const projects = [
 ];
 
 export default function Portfolio() {
+  const [openProjectIndex, setOpenProjectIndex] = useState(null);
+
+  const toggleDetails = (index) => {
+    setOpenProjectIndex(openProjectIndex === index ? null : index);
+  };
+
   return (
     <main className="font-sans text-gray-900 bg-[#f5f5f5]">
       {/* Hero Section */}
@@ -80,16 +86,14 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Projets */}
+      {/* Timeline Section */}
       <section id="projects" className="py-16 px-8">
-        <h2 className="text-3xl font-bold text-center mb-10 text-[#065F46]">Mes projets</h2>
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <h2 className="text-3xl font-bold text-center mb-10 text-[#065F46]">Mon parcours professionnel</h2>
+        <div className="border-l-2 border-[#10B981] pl-6 space-y-10 max-w-3xl mx-auto">
           {projects.map((project, index) => (
-            <div
-              key={index}
-              className="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition border-t-4 border-[#10B981]"
-            >
-              <div className="flex items-center gap-4 mb-4">
+            <div key={index} className="relative">
+              <div className="absolute -left-4 top-2 w-4 h-4 bg-[#10B981] rounded-full"></div>
+              <div className="flex items-center gap-4 mb-2">
                 <div className="w-10 h-10 relative">
                   <Image
                     src={project.logo}
@@ -102,22 +106,32 @@ export default function Portfolio() {
                   {project.title}
                 </h3>
               </div>
-              <p className="mb-2 text-gray-700">{project.description}</p>
-              <ul className="list-disc pl-6 mb-4 text-sm text-gray-600">
-                {project.tasks.map((task, i) => (
-                  <li key={i}>{task}</li>
-                ))}
-              </ul>
-              <div className="flex flex-wrap gap-2">
-                {project.skills.map((skill, i) => (
-                  <span
-                    key={i}
-                    className="bg-[#D1FAE5] text-[#065F46] px-3 py-1 rounded-full text-xs"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
+              <button
+                onClick={() => toggleDetails(index)}
+                className="text-sm text-[#10B981] underline mb-2"
+              >
+                {openProjectIndex === index ? "Masquer" : "Voir plus"}
+              </button>
+              {openProjectIndex === index && (
+                <div className="bg-white p-4 mt-2 rounded-lg shadow">
+                  <p className="mb-2 text-gray-700">{project.description}</p>
+                  <ul className="list-disc pl-6 mb-4 text-sm text-gray-600">
+                    {project.tasks.map((task, i) => (
+                      <li key={i}>{task}</li>
+                    ))}
+                  </ul>
+                  <div className="flex flex-wrap gap-2">
+                    {project.skills.map((skill, i) => (
+                      <span
+                        key={i}
+                        className="bg-[#D1FAE5] text-[#065F46] px-3 py-1 rounded-full text-xs"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           ))}
         </div>
