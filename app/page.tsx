@@ -57,7 +57,7 @@ const projects: Experiences[] = [
     description: [
       "<b>Entreprise:</b> DXOMARK propose des services auprès des fabricants de smartphones pour les accompagner dans l'amélioration de la qualité de leurs produits. Le service le plus connu est un service de conseil sur la qualité des photos et vidéos qui est basé sur un protocole de tests. En parallèle, DXOMARK a créé un nouveau produit appelé <a href='https://www.dxomark.com/insights' target='_blank' rel='noopener noreferrer' style='color: #10B981; text-decoration: underline;'>Insights</a>, qui vise à fournir des informations sur les préférences utilisateurs, permettant aux fabricants de smartphones de mieux comprendre les attentes de leurs clients.",
       "<b>Organisation des équipes:</b> Multi scrum.",
-      "<b>Rôles:</b> responsable de la communication auprès d'un portefeuille clients afin de s'assurer de leur satisfaction sur les projets en cours, du recueil de leurs besoins et de leurs roadmaps produits internes.",
+      "<b>Rôles:</b> responsable de la communication auprès d'un portefeuille clients afin de s'assurer de leur satisfaction sur les projets en cours, du recueil de leurs besoins et de leurs roadmaps produits internes. Je travaille également sur la création et la priorisation du backlog produit pour le service Insights et l'amélioration du produit conseil.",
     ],
     projects: [
       {
