@@ -63,12 +63,12 @@ const projects: Experiences[] = [
       {
         title: "Insights - Apporter aux fabricants de smartphones des informations sur les préférences utilisateurs.",
         details: [
-          "Phase de discovery pour identfier les challenges rencontrés par les fabricants de smartphones.",
+          "Phase de discovery pour identifier les challenges rencontrés par les fabricants de smartphones.",
           "Création et priorisation du backlog.",
           "Création d'une roadmap produit.",
           "Rédaction des spécifications fonctionnelles et techniques.",
           "Gestion de projet afin de respecter les délais et le budget.",
-          "Présentation régulières des résultats aux clients.",
+          "Présentations régulières des résultats aux clients.",
           "Présentation en interne de l'avancement du projet avec mise en avant des KPI clés (satisfaction et retours clients, coût, délai).",
         ],
       },
@@ -141,7 +141,7 @@ const projects: Experiences[] = [
         title: "Ingénieur conseil en qualité d'image.",
         details: [
           "Relation client au jour le jour avec les équipes de développement des fabricants de smartphones.",
-          "Analyse des la qualité des produits.",
+          "Analyse de la qualité des produits.",
         ],
       },
       {
@@ -190,7 +190,7 @@ export default function Portfolio() {
           {/* Texte à droite */}
           <div className="text-lg max-w-2xl">
             <p>
-              Ingénieur de formation à l'UTT et CentraleSupélec, je suis passionné par la technologie et l'amélioration produit. A travers mes expériences, j'ai pu découvrir différentes cultures d'entreprise : une scale-up dans le secteur de la tech ainsi qu'une entreprise de renommée internationale. Toutes les deux mettant l'agilité au cœur de leur fonctionnement.
+              Ingénieur de formation de l'UTT et de CentraleSupélec, je suis passionné par la technologie et l'amélioration produit. A travers mes expériences, j'ai pu découvrir différentes cultures d'entreprise : une scale-up dans le secteur de la tech ainsi qu'une entreprise de renommée internationale. Toutes les deux mettant l'agilité au cœur de leur fonctionnement.
             </p>
             <br />
             <p>
@@ -348,7 +348,7 @@ export default function Portfolio() {
                 />
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-[#0F172A]">Stage - Matériaux luminescants</h3>
+                <h3 className="text-xl font-semibold text-[#0F172A]">Stage - Matériaux luminescents</h3>
                 <p className="text-sm text-gray-600">CNRS- Janvier 2017 à Juin 2017</p>
               </div>
             </div>
